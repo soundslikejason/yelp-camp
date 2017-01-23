@@ -13,6 +13,8 @@ app.get("/campgrounds", function(req, res) {
         {name: "Granite Hill", image: "https://farm9.staticflickr.com/8673/15989950903_8185ed97c3.jpg"},    
         {name: "Mountain Goat's Rest", image: "https://farm8.staticflickr.com/7259/7121858075_7375241459.jpg"}    
     ]
+    
+    res.render("campgrounds", {campgrounds: campgrounds});
 });
 
 app.listen(process.env.PORT, process.env.IP, function() {
