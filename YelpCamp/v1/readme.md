@@ -2,7 +2,7 @@
 * Add Landing Page
 * Add Campgrounds Page that lists all campgrounds
 
-Each Campground has:
+#Each Campground has:
  * Name
  * Image
 
@@ -17,3 +17,9 @@ Each Campground has:
 #Layout and Basic Styling
 * Create our header and footer partials
 * Add in Bootstrap
+
+#Creating New Campgrounds
+* Setup new campgrounds POST route
+* Add in body-parser
+* Setup route to show form
+* Add basic unstyled form
