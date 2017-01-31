@@ -43,15 +43,6 @@
 * Show db.collection.drop()
 * Add a show route/template
 
-RESTFUL ROUTES
-
-name    url         verb    desc.
-================================================
-INDEX   /dogs       GET     Display a list of all dog   
-NEW     /dogs/new   GET     Displays form to make a new dog
-CREATE  /dogs       POST    Add new dog to DB
-SHOW    /dogs/:id   GET     Shows info about one dog
-
 #Refactor Mongoose Code
 * Create a models directory
 * Use module.exports
@@ -60,3 +51,7 @@ SHOW    /dogs/:id   GET     Shows info about one dog
 #Add Seeds File
 * Add a seeds.js file
 * Run the seeds file every time the server starts
+
+#Add the Comment model!
+* Make our errors go away!
+* Display comments on campground show page
