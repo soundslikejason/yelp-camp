@@ -1,10 +1,12 @@
 var express    = require("express"),
     app        = express(),
     bodyParser = require("body-parser"),
-    mongoose   = require("mongoose")
-    mongoose.Promise = global.Promise;
-    Campground = require("./models/campground");
-    seedDB     = require("./seeds");
+    mongoose   = require("mongoose"),
+    Campground = require("./models/campground"),
+    Comment    = require("./models/comment"),
+    seedDB     = require("./seeds")
+    
+mongoose.Promise = global.Promise;
     
 mongoose.connect("mongodb://localhost/yelp_camp_v3");
 app.use(bodyParser.urlencoded({extended: true}));
@@ -92,6 +94,29 @@ app.get("/campgrounds/:id/comments/new", function(req, res) {
             res.render("comments/new", {campground: campground});     
         }
     });
+});
+
+app.post("/campgrounds/:id/comments", function(req, res) {
+    //lookup campground using ID
+    Campground.findById(req.params.id, function(err, campground) {
+        if (err) {
+            console.log(err);
+            res.redirect("/campgrounds");
+        } else {
+            Comment.create(req.body.comment, function(err, comment) {
+                if (err) {
+                    console.log(err);
+                } else {
+                    campground.comments.push(comment);
+                    campground.save();
+                    res.redirect('/campgrounds/' + campground._id);
+                }
+            });
+        }
+    });
+    //create new comment
+    //connect new comment to campground
+    //redirect campground show page
 });
 
 app.listen(process.env.PORT, process.env.IP, function() {
