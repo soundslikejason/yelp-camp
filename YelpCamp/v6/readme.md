@@ -79,4 +79,6 @@
 * Add register routes
 * Add register template
 
-
+##Auto Pt. 3 - Login
+* Add login routes
+* Add lgin template
