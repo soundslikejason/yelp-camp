@@ -111,3 +111,8 @@
 ##Deleting Campgrounds
 * Add Destroy Route
 * Add Delete button
+
+##Authorization
+* User can only edit his/her campgrounds
+* User can only delete his/her campgrounds
+* Hide/Show edit and delete buttons
