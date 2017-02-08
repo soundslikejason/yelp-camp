@@ -125,3 +125,9 @@
 ##Deleting Comments
 * Add Destroy route
 * Add Delete button
+
+##Authorization Part 2: Comments
+* User can only edit his/her comments
+* User can only delete his/her comments
+* Hide/Show edit and delte buttons
+* Refactor Middleware
